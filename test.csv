@@ -1,0 +1,12 @@
+HasRelator,DiscreditRelator,HasCausalVerb,HasCause,tag
+True,False,True,False,False
+False,False,False,False,False
+False,False,False,False,False
+False,False,False,False,False
+False,False,False,False,False
+False,False,False,False,False
+False,False,False,True,True
+False,False,True,False,False
+False,False,False,False,False
+False,False,False,False,False
+False,False,False,False,False

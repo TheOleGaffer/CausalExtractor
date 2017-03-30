@@ -1,0 +1,189 @@
+Observations:
+look for the word by?
+look for capturing non main verbs to check for causality
+does passive voice discredit a verb or not? see 12 (14 is an example that this might not be the case)
+How to detect non verb phrases which indicate causality? (see 27 and 39) maybe "causes of" (?)
+Should we have something to check if it is between nominal pair
+Try and get statistics on the word "from" - see 32
+Check if the main verb is between the nominal pair else discredit it? 
+	maybe take it a step further and look at all verbs in between the nominal pair (get statistics)
+
+Since feature stats: (seems to signify a temporal relationship more often)
+	when since is just present in the sentence:
+	Total amount: 37.0
+	Incorrect amount: 30.0
+	Correct amount: 7.0
+	Percentage correct: 18.9189189189
+
+	when since is just in between nominal pairs: (seems like it is a causal sentence? regardless doesn't matter because the since isn't actually between nominal pairs (the soil gets grabbed before the real nominal pair))
+	Correct: 
+	Total amount: 1.0
+	Incorrect amount: 1.0
+	Correct amount: 0.0
+	Percentage correct: 0.0
+
+	7741	"Your garden does well with either of these soils since these <e1>soils</e1> come from a reputable <e2>dealer</e2>."
+
+Because feature stats:
+	when because is between nominal pair: (2341) and 4472(?)
+	Total amount: 2.0
+	Incorrect amount: 1.0
+	Correct amount: 1.0
+	Percentage correct: 50.0
+
+	when it is just any because in sentence
+	Total amount: 55.0
+	Incorrect amount: 46.0
+	Correct amount: 9.0
+	Percentage correct: 16.3636363636
+
+As feature stats: (between nominal pairs)
+	Total amount: 49.0
+	Incorrect amount: 45.0
+	Correct amount: 4.0
+	Percentage correct: 8.16326530612
+
+After Feature stats:
+	Total amount: 62.0
+	Incorrect amount: 22.0
+	Correct amount: 40.0
+	Percentage correct: 64.5161290323
+
+From Feature stats:
+	from as a feature if in between nominal pair
+	Total amount: 933.0
+	Incorrect amount: 716.0
+	Correct amount: 217.0
+	Percentage correct: 23.258306538
+
+	from as a feature and making sure that it is only a noun in front of it
+	Total amount: 417.0
+	Incorrect amount: 274.0
+	Correct amount: 143.0
+	Percentage correct: 34.2925659472
+
+	from as a feature and can only have four words between the nominal pair
+	Total amount: 98.0
+	Incorrect amount: 34.0
+	Correct amount: 64.0
+	Percentage correct: 65.306122449
+
+	removed the noun restriction but kept the length restriction:
+	Total amount: 114.0
+	Incorrect amount: 38.0
+	Correct amount: 76.0
+	Percentage correct: 66.6666666667
+
+	with just length restriction but changed to five words instead of four:
+	Total amount: 279.0
+	Incorrect amount: 150.0
+	Correct amount: 129.0
+	Percentage correct: 46.2365591398
+
+	with length three:
+	Total amount: 36.0
+	Incorrect amount: 8.0
+	Correct amount: 28.0
+	Percentage correct: 77.7777777778
+
+	after fixing removing tags bug (all the prior results aren't quite right) with length four
+	Total amount: 253.0
+	Incorrect amount: 130.0
+	Correct amount: 123.0
+	Percentage correct: 48.6166007905
+
+	after bug fix with length three
+	Total amount: 100.0
+	Incorrect amount: 19.0
+	Correct amount: 81.0
+	Percentage correct: 81.0
+
+Has Cause Lemma stats:
+	first with only cause between nominal pairs (not lemma also the one wrong sentence was mislabeled)
+	Total amount: 70.0
+	Incorrect amount: 1.0
+	Correct amount: 69.0
+	Percentage correct: 98.5714285714
+
+	with lemma too: (one sentence is incorrectly marked imo 7317)
+	Total amount: 108.0
+	Incorrect amount: 2.0
+	Correct amount: 106.0
+	Percentage correct: 98.1481481481
+
+(a lot of product-producer seems like cause-effect)
+1. NOT - has "as" but is not causal, as is not between nominal pairs
+7. has "caused by" in between the nominal pair - main verb is "is" so wouldn't find it as causal verb - also has "results" afterwards
+12 NOT the main verb is sunk which is considered a causal verb - is "has sunk" however, can passive voice discredit?
+14. has "caused by" in between the nominal pair - also note it says "has been caused"
+15. NOT - has "have moved" - moved would be considered causal
+23. has "caused" in between nominal pair - caused is considered the main verb
+27. "causes of", causes here is a noun instead of a verb, also is between nominal pair
+30. WRONG - I think this is also a causal sentence (the timer eliminates wasted power consumption) ie causes the wasteful power consumption to be gone
+32. currently have nothing that would detect it - has the word "from" in between nominal pair by itself
+35. WRONG ? - think this could also be causal "in order to" also the word "reduce" is causal
+39 "causes of" - the main verb is "is" which obviously is non causal - is between nominal pair
+41 "that caused the" - is not the main verb - is between the nominal pair
+45 "are caused by" - not sure if it is considered causal verb - in between nominal pair
+48 "as" is not between the nominal pair and should not matter - "caused by" is in between the nominal pair
+51 "from the" is between the nominal pair
+53 currently cannot capture - "arose from" is in between the nominal pair
+54 "from" is between the nominal pair
+56. WRONG?
+61. NOT "moving" is a causal verb and is in present perfect progressive (consider as case against using this as discreditor " the chemical leaks have been generating cases of cancer") (does the preposition afterwards discredit?)
+66. WRONG? consider that the charge of the calvary caused the rout (don't think this can be handled at all seeing as completed isn't considered a causal verb) - are there any other words that should be looked for in definitions?
+1612 WRONG is also causal in addition to the other
+7317 WRONG? not sure why it is marked other
+
+
+
+
+Observations for Non-captured:
+
+with from at length 4 instead of length three:
+Not captured total: 359
+Total amount: 811.0
+Incorrect amount: 166.0
+Correct amount: 645.0
+Percentage correct: 79.5314426634
+
+vs at length three
+Not captured total: 407
+Total amount: 651.0
+Incorrect amount: 54.0
+Correct amount: 597.0
+Percentage correct: 91.7050691244
+
+vs at length five
+Not captured total: 327
+Total amount: 969.0
+Incorrect amount: 292.0
+Correct amount: 677.0
+Percentage correct: 69.8658410733
+
+
+with length at 3 - and accepting anything with from as the second word (because the first word is the noun)
+Not captured total: 342
+Total amount: 877.0
+Incorrect amount: 215.0
+Correct amount: 662.0
+Percentage correct: 75.4846066135
+
+with length at 3 - and accepting anything with from as the second word and less than length 5 (because the first word is the noun)
+Not captured total: 364
+Total amount: 790.0
+Incorrect amount: 150.0
+Correct amount: 640.0
+Percentage correct: 81.0126582278
+
+with length at 3 - and accepting anything with from as the second word and less than length 6 (because the first word is the noun)
+Not captured total: 351
+Total amount: 832.0
+Incorrect amount: 179.0 (167 because of from)
+Correct amount: 653.0
+Percentage correct: 78.4855769231
+
+a less than 167 of 407 not captured are because of "from" being more than 3
+	from is in prepositional phrase
+	70 have from right after first noun
+	need to discredit temporal froms

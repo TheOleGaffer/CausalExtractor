@@ -1,0 +1,3 @@
+2150	"Because the <e1>fire</e1> was caused by <e2>fireworks</e2>, costs associated with suppressing the fire were also applied."
+Cause-Effect(e2,e1)
+Comment:
